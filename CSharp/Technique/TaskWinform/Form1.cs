@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace TaskWinform
 {
     /// <summary>
-    /// 本代码演示了：winform创建两个线程，数据完成后结果更新显示到UI上。
+    /// 本代码演示了：winform创建两个线程，线程完成后结果更新显示到UI上，同时UI不卡死。
     /// 本代码主旨为了解决线程同步和UI卡死问题
     /// </summary>
     public partial class Form1 : Form
@@ -22,7 +22,7 @@ namespace TaskWinform
             InitializeComponent();
         }
 
-        //记录线程的时间信息等，最后打印出来，为了验证线程是不是同时启动
+        //记录线程的运行时间信息等，最后打印出来，为了验证线程是不是同时启动
         private List<string> mulLog = new List<string>();
         private List<string> addLog = new List<string>();
 
@@ -34,6 +34,7 @@ namespace TaskWinform
             //创建一个当前线程的任务计划
             var scheduler = TaskScheduler.FromCurrentSynchronizationContext();
 
+            //异步线程
             Task.Run(() =>
             {
                 //启动两个线程，并记录结果
@@ -43,7 +44,7 @@ namespace TaskWinform
 
             }).ContinueWith(x =>
             {   //任务完成时，异步执行与scheduler相关的延续任务 ，x => 所指向的就是延续任务          
-                //记录结果后，把结果打印出来，这里采用了委托异步调用，为了防止打印大量log时，ui卡住问题
+                //记录结果后，把结果打印出来，这里采用了委托异步调用，为了防止richTextBox打印大量log时，ui卡住问题
                 Action act = delegate ()
                 {
                     label1.Text = arr[0].ToString();
@@ -53,6 +54,7 @@ namespace TaskWinform
                     addLog.ForEach(p => richTextBox1.AppendText(p + Environment.NewLine));
                 };
                 this.BeginInvoke(act, null);
+
             }, scheduler);
 
 
@@ -66,19 +68,21 @@ namespace TaskWinform
                 double sum = 1, i = 1;
                 long mi , preMi = 0;
 
-                Stopwatch sw = new Stopwatch();     //为了计时，创建一个Stopwatch
+                Stopwatch sw = new Stopwatch();     //创建一个Stopwatch，为了计时
                 sw.Start();                         //计时开始
 
-                //在设定的毫秒属内循环，模拟一个耗时的任务
+                //在设定的毫秒数内循环，模拟一个耗时的任务
                 do
                 {
                     sum *= i;
                     i++;
                     mi = sw.ElapsedMilliseconds;    //获取从计时开始的毫秒数        
 
-                    //每100ms记录一条不重复的数据
+                    //log记录task id，当前时间
                     string text = string.Format("{0}: task id = {1}, i={2}", DateTime.Now.ToString("yy-MM-dd hh:mm:ss.fff"), Task.CurrentId, i);
-                    if (mi % 100 == 0 && mi != preMi)
+                    //每100ms记录一条不重复的log
+                    //preMi：防止重复 , mi = preMi的log就不记录了
+                    if (mi % 100 == 0 && mi != preMi)   
                     {
                         preMi = mi; 
                         mulLog.Add(text);
