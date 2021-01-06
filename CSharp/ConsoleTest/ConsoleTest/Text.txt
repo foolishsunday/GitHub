@@ -11,3 +11,12 @@
 2.Limq本质：Lambda表达式和扩展方法。
 			Lambda表达式本质：匿名方法。
 			扩展方法：由参数调用方法，不用声明对象，因为类和方法都是静态的。
+3.集合类的选用：
+	HashSet：不重复
+	SortedSet:排序且不重复
+	Queue:先入先出
+	Stack：后入先出
+	Hashtable:哈希表键值对
+	SortedList:排好序的键值对
+	LinkedList:频繁插入或删除，把XX元素移到第XX位时
+	
