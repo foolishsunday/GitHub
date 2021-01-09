@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{218CFFA3-F64
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNetCore", "..\..\Web\NetCore\MyNetCore\MyNetCore.csproj", "{32CEC840-4561-493D-B53A-41BE87D5825D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandlerApp", "..\..\Technique\EventHandlerApp\EventHandlerApp\EventHandlerApp.csproj", "{13BF8F3F-F42B-4B59-B306-19129F59D061}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{32CEC840-4561-493D-B53A-41BE87D5825D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32CEC840-4561-493D-B53A-41BE87D5825D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32CEC840-4561-493D-B53A-41BE87D5825D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13BF8F3F-F42B-4B59-B306-19129F59D061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13BF8F3F-F42B-4B59-B306-19129F59D061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BF8F3F-F42B-4B59-B306-19129F59D061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13BF8F3F-F42B-4B59-B306-19129F59D061}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{0DADD7F2-DDFA-412F-A70E-81701595C2A3} = {04B50EF6-1C1F-496A-9554-F173C9A1314C}
 		{3E8CFBF7-E764-432C-BAF5-DC867C6D9E4F} = {268C0805-CDDF-4939-AD33-BF7CD3C42A69}
 		{32CEC840-4561-493D-B53A-41BE87D5825D} = {218CFFA3-F64B-43BC-9C60-81B6EFB77287}
+		{13BF8F3F-F42B-4B59-B306-19129F59D061} = {04B50EF6-1C1F-496A-9554-F173C9A1314C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29CFFAE6-0200-4CB0-BF82-9AFF38CB34BE}
