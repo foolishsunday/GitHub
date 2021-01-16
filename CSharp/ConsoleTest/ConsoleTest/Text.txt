@@ -5,6 +5,8 @@
 	start/launch/create/begin/open
 	make/create/setup/build/generate/compose
 	add/new
+	args/seq/arr/list/registers/text/item
+	hasMore/hasNext
 	使用具体的名字来描述：ServerCanStart()比CanListenOnPort好
 	给变量带上重要细节：表示毫秒_ms，表示未处理raw_
 	if(不断变化的值 < 固定值)
@@ -17,6 +19,14 @@
 	Queue:先入先出
 	Stack：后入先出
 	Hashtable:哈希表键值对
-	SortedList:排好序的键值对
 	LinkedList:频繁插入或删除，把XX元素移到第XX位时
+	SortedList:排序；排好序的键值对，查找数据极快，但添加新元素，删除元素较慢	
+	Dictionary:不排序；通过键来检索值的速度快，接近于 O(1)
+	SortedDictionary:排序；查找，添加，删除速度都比较平均
+4.Enumerable:
+	var registers = new List<int>(Enumerable.Repeat(0, n));	//产生重复的序列
+	var registers = new List<int>(Enumerable.Range(0, 3));	//生成某区间序列 0,1,2
+5.new string:
+	var registers = new string('*', 4);						//生成****
+	
 	

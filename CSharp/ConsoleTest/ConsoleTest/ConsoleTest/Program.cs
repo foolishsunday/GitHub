@@ -6,19 +6,25 @@ using System.Threading.Tasks;
 
 namespace ConsoleTest
 {
+    public class Person
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            SortedList<int, string> list = new SortedList<int, string>();
-            list.Add(3, "c");
-            list.Add(1, "a");
-            list.Add(2, "b");
-            list.Add(88, "f");
-            list.Add(34, "e");
-            list.Add(22, "d");
-            list.Reverse().ToList().ForEach(x => Console.WriteLine(x));
+            int[] array = new int[] { 3, 2, 4, 5, 6, 7, 7, 1, 1, 1, 1, 1, 1, 1 };
+            int[] another = new int[] { 10, 11, 12 };
+            var together = array.Union(another);//先求并集，会把重复元素合并为1个
+            var orders = together.OrderBy(x => x);   //需引用：using System.Linq;
+            foreach (var item in orders)
+                Console.WriteLine(item);
             Console.Read();
         }
     }
+
 }

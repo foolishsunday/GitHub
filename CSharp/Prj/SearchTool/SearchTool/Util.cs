@@ -17,6 +17,10 @@ namespace SearchTool
             }
             var di = new DirectoryInfo(docPath);
             var subFolders = di.GetDirectories();
+
+            //排序
+            
+
             if (subFolders.Length > 0)
             {
                 foreach (var item in subFolders)

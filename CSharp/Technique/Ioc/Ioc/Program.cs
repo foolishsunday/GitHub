@@ -5,20 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IOC_App
+namespace Ioc
 {
     public static class DispatchHandler
     {
         public static void DownloadSuccessResult(DispatchEventArgs e)
         {
-   
+
             var data = e.ResultData.First();
-            Console.WriteLine("key = {0}, value = {1}",data.Key, data.Value);
+            Console.WriteLine("key = {0}, value = {1}", data.Key, data.Value);
             Console.WriteLine("name = {0}, id = {1}", e.Name, e.Id);
         }
     }
     class Program
-    {       
+    {
         static void Main(string[] args)
         {
             var data = new DispatchEventArgs();
@@ -48,7 +48,7 @@ namespace IOC_App
                 }
             }
         }
-         
+
     }
     public class BaseEventArgs : EventArgs
     {
@@ -71,12 +71,9 @@ namespace IOC_App
         //public bool ContainKey(string key) 
     }
     public class DispatchEventArgs : ReportMessageEventArgs<KeyValueCollection>
-    { 
+    {
         public string Type { get; set; }
         public string Command { get; set; }
         public KeyValueCollection ResultData { get; set; }
     }
-
-
-
 }
