@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3FF156C-2D86-4B39-A365-CD34F8D7BDD2}</ProjectGuid>
+    <ProjectGuid>{284F1EBC-E76C-481F-8247-C5A8035E2A0C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Ioc</RootNamespace>
     <AssemblyName>Ioc</AssemblyName>
