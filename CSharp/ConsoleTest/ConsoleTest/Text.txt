@@ -18,10 +18,10 @@
 	SortedSet:排序且不重复
 	Queue:先入先出
 	Stack：后入先出
-	Hashtable:哈希表键值对
+	Hashtable:哈希表键值对，不支持泛型，多线程推荐使用
 	LinkedList:频繁插入或删除，把XX元素移到第XX位时
 	SortedList:排序；排好序的键值对，查找数据极快，但添加新元素，删除元素较慢	
-	Dictionary:不排序；通过键来检索值的速度快，接近于 O(1)
+	Dictionary:不排序；通过键来检索值的速度快，接近于 O(1)，支持泛型，单线程使用
 	SortedDictionary:排序；查找，添加，删除速度都比较平均
 4.Enumerable:
 	var registers = new List<int>(Enumerable.Repeat(0, n));	//产生重复的序列
