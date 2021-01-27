@@ -12,7 +12,7 @@ namespace LinqApp
         {
             //1.Select
             Console.WriteLine("Select的应用:创建一个新的结果字段");
-            string path = @"index.ppat";
+            string path = @"index.ppt";
             string[] names = ".word .xls .xlsx .ppt".Split(' ');
             var targets = names.Select(p => path.EndsWith(p));
             var isTarget = targets.Any(p => p == true);

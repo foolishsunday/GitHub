@@ -16,17 +16,12 @@ namespace LeetCode_Task_1115
 
         public AutoResetEvent fooSignal = new AutoResetEvent(false);
         public AutoResetEvent barSignal = new AutoResetEvent(false);
-        Semaphore sm = new Semaphore(3, 3);
         public FooBar(int n)
         {
             this.n = n;
-            //Task.Run(() => foo());
-            //Task.Run(() => bar());
-            var ts1 = new Thread(() => Foo(()=> Console.Write("foo")));
-            var ts2 = new Thread(() => Bar(() => Console.Write("bar")));
-            ts1.Start();
-            ts2.Start();
             fooSignal.Set();
+
+
         }
         public void Foo(Action printFoo)
         {
@@ -59,10 +54,10 @@ namespace LeetCode_Task_1115
         {
             var fb = new FooBar(1000);
 
-            //var ts1 = new Thread(() => fb.foo()) ;
-            //var ts2 = new Thread(() => fb.bar());
-            //ts1.Start();
-            //ts2.Start();
+            var ts1 = new Thread(() => fb.Foo(()=>Console.Write("foo")));
+            var ts2 = new Thread(() => fb.Bar(() => Console.Write("bar")));
+            ts1.Start();
+            ts2.Start();
             Console.Read();
         }
     }
