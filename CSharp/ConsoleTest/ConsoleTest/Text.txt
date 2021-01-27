@@ -28,5 +28,6 @@
 	var registers = new List<int>(Enumerable.Range(0, 3));	//生成某区间序列 0,1,2
 5.new string:
 	var registers = new string('*', 4);						//生成****
-	
+
+
 	

@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode_Task_1114", "..\..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode_Task_1115", "..\..\Examination\LeetCode_Task_1115\LeetCode_Task_1115.csproj", "{12376F66-A482-4FBF-BDF0-B8E16D1CF083}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqApp", "..\..\Technique\LinqApp\LinqApp\LinqApp.csproj", "{A89AFCF9-6B1B-4391-8E90-12E7EB6455A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +116,10 @@ Global
 		{12376F66-A482-4FBF-BDF0-B8E16D1CF083}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12376F66-A482-4FBF-BDF0-B8E16D1CF083}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12376F66-A482-4FBF-BDF0-B8E16D1CF083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A89AFCF9-6B1B-4391-8E90-12E7EB6455A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A89AFCF9-6B1B-4391-8E90-12E7EB6455A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A89AFCF9-6B1B-4391-8E90-12E7EB6455A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A89AFCF9-6B1B-4391-8E90-12E7EB6455A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +140,7 @@ Global
 		{2B7C2090-A910-410E-8043-E6B3937C3E30} = {F9E98DA3-030D-4D37-8EBB-4139B6E1EAF8}
 		{D2E397CD-93D3-4676-A252-3528A043E67F} = {A6BA9C36-9F99-4A04-95DC-F598FA01FBFF}
 		{12376F66-A482-4FBF-BDF0-B8E16D1CF083} = {A6BA9C36-9F99-4A04-95DC-F598FA01FBFF}
+		{A89AFCF9-6B1B-4391-8E90-12E7EB6455A2} = {04B50EF6-1C1F-496A-9554-F173C9A1314C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29CFFAE6-0200-4CB0-BF82-9AFF38CB34BE}

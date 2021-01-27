@@ -16,6 +16,7 @@ namespace LeetCode_Task_1115
 
         public AutoResetEvent fooSignal = new AutoResetEvent(false);
         public AutoResetEvent barSignal = new AutoResetEvent(false);
+        Semaphore sm = new Semaphore(3, 3);
         public FooBar(int n)
         {
             this.n = n;
