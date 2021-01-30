@@ -14,14 +14,12 @@ namespace LeetCode_Task_1115
     {
         private int n;
 
-        public AutoResetEvent fooSignal = new AutoResetEvent(false);
-        public AutoResetEvent barSignal = new AutoResetEvent(false);
+        private AutoResetEvent fooSignal = new AutoResetEvent(false);
+        private AutoResetEvent barSignal = new AutoResetEvent(false);
         public FooBar(int n)
         {
             this.n = n;
             fooSignal.Set();
-
-
         }
         public void Foo(Action printFoo)
         {

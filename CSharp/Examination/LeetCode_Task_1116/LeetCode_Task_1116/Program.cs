@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LeetCode_Task_1116
@@ -35,31 +33,73 @@ class ZeroEvenOdd {
     {
         static void Main(string[] args)
         {
+            Action<int> act = (x) => Console.Write(x);
+            ZeroEvenOdd zeo = new ZeroEvenOdd(5);
+            Task.Run(() =>
+            {
+                zeo.Odd(act);
+            });
+            Task.Run(() =>
+            {
+                zeo.Zero(act);
+            });
+            Task.Run(() =>
+            {
+                zeo.Even(act);
+            });
+            Console.Read();
         }
     }
     public class ZeroEvenOdd
     {
         private int n;
+        private SemaphoreSlim sZero = new SemaphoreSlim(1, 1);
+        private SemaphoreSlim sOdd = new SemaphoreSlim(0, 1);
+        private SemaphoreSlim sEven = new SemaphoreSlim(0, 1);
+        //private Semaphore sZero = new Semaphore(1,1);
+        //private Semaphore sOdd = new Semaphore(0, 1);
+        //private Semaphore sEven = new Semaphore(0, 1);
 
         public ZeroEvenOdd(int n)
         {
-            this.n = n;
+            this.n = n; //0102030405
         }
-
-        // printNumber(x) outputs "x", where x is an integer.
+         
+    
         public void Zero(Action<int> printNumber)
         {
+            for (int i = 0; i < n; i++)
+            {
+                sZero.Wait();
+                //sZero.WaitOne();
+                printNumber(0);
+                if(i%2==0)
+                    sOdd.Release();
+                else
+                    sEven.Release();
 
-        }
-
-        public void Even(Action<int> printNumber)
-        {
-
+            }
         }
 
         public void Odd(Action<int> printNumber)
         {
-
+            for (int i = 1; i <= n; i+=2)
+            {
+                sOdd.Wait();
+                printNumber(i);
+                sZero.Release();
+            }
         }
+        public void Even(Action<int> printNumber)
+        {
+            for (int i = 2; i <= n; i += 2)
+            {
+                sEven.Wait();
+                printNumber(i);
+                sZero.Release();
+            }
+        }
+
+
     }
 }

@@ -52,6 +52,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqApp", "..\..\Technique\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaximumSubarraySum", "..\..\Examination\CodeWars_Algorithm_MaximumSubarraySum\MaximumSubarraySum\MaximumSubarraySum.csproj", "{F20A63AD-CA95-4B71-A9D9-0B57C51F96F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode_Task_1116", "..\..\Examination\LeetCode_Task_1116\LeetCode_Task_1116\LeetCode_Task_1116.csproj", "{6913D742-6393-43C0-91E7-7BB4CEF65425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode_Task_1117_H2O", "..\..\Examination\LeetCode_Task_1117\LeetCode_Task_1117_H2O\LeetCode_Task_1117_H2O.csproj", "{538B4C7D-9519-46D9-B43F-55EDB1D872B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode_Task_1195_FizzBuzz", "..\..\Examination\LeetCode_Task_1195\LeetCode_Task_1195_FizzBuzz\LeetCode_Task_1195_FizzBuzz.csproj", "{91708CC4-6A4D-46DC-A839-FBF219B56D76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -126,6 +132,18 @@ Global
 		{F20A63AD-CA95-4B71-A9D9-0B57C51F96F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F20A63AD-CA95-4B71-A9D9-0B57C51F96F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F20A63AD-CA95-4B71-A9D9-0B57C51F96F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6913D742-6393-43C0-91E7-7BB4CEF65425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6913D742-6393-43C0-91E7-7BB4CEF65425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6913D742-6393-43C0-91E7-7BB4CEF65425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6913D742-6393-43C0-91E7-7BB4CEF65425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{538B4C7D-9519-46D9-B43F-55EDB1D872B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538B4C7D-9519-46D9-B43F-55EDB1D872B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538B4C7D-9519-46D9-B43F-55EDB1D872B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538B4C7D-9519-46D9-B43F-55EDB1D872B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91708CC4-6A4D-46DC-A839-FBF219B56D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91708CC4-6A4D-46DC-A839-FBF219B56D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91708CC4-6A4D-46DC-A839-FBF219B56D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91708CC4-6A4D-46DC-A839-FBF219B56D76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +166,9 @@ Global
 		{12376F66-A482-4FBF-BDF0-B8E16D1CF083} = {A6BA9C36-9F99-4A04-95DC-F598FA01FBFF}
 		{A89AFCF9-6B1B-4391-8E90-12E7EB6455A2} = {04B50EF6-1C1F-496A-9554-F173C9A1314C}
 		{F20A63AD-CA95-4B71-A9D9-0B57C51F96F9} = {A6BA9C36-9F99-4A04-95DC-F598FA01FBFF}
+		{6913D742-6393-43C0-91E7-7BB4CEF65425} = {A6BA9C36-9F99-4A04-95DC-F598FA01FBFF}
+		{538B4C7D-9519-46D9-B43F-55EDB1D872B7} = {A6BA9C36-9F99-4A04-95DC-F598FA01FBFF}
+		{91708CC4-6A4D-46DC-A839-FBF219B56D76} = {A6BA9C36-9F99-4A04-95DC-F598FA01FBFF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29CFFAE6-0200-4CB0-BF82-9AFF38CB34BE}
