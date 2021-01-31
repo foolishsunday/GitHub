@@ -33,7 +33,6 @@ namespace UnpopularKnownledge
             Assert.AreEqual(repstr, "****");//true
 
             Console.WriteLine("Yes.");
-
             Console.Read();
 
            
