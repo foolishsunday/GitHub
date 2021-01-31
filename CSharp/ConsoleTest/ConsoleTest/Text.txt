@@ -23,11 +23,7 @@
 	SortedList:排序；排好序的键值对，查找数据极快，但添加新元素，删除元素较慢	
 	Dictionary:不排序；通过键来检索值的速度快，接近于 O(1)，支持泛型，单线程使用
 	SortedDictionary:排序；查找，添加，删除速度都比较平均
-4.Enumerable:
-	var registers = new List<int>(Enumerable.Repeat(0, n));	//产生重复的序列
-	var registers = new List<int>(Enumerable.Range(0, 3));	//生成某区间序列 0,1,2
-5.new string:
-	var registers = new string('*', 4);						//生成****
+
 
 
 	

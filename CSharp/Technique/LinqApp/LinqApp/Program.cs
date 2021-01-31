@@ -57,6 +57,18 @@ namespace LinqApp
             Console.WriteLine("GroupBy:找出数组中不重复的唯一");
             Console.WriteLine(GetUnique(new List<int>() { 1, 1, 1, 2, 1, 1 }));
             Console.Read();
+
+            //5.Dictionary赋初值方式
+            var newDict = new Dictionary<string, List<int>>()
+            {
+                ["pos"] = new List<int>(),
+                ["peaks"] = new List<int>()
+            };
+            var nDict = new Dictionary<string, int[]>()
+            {
+                {"peaks", new int[]{123 } },
+                {"pos", new int[]{456 }}
+            };
         }
         static int GetUnique(IEnumerable<int> numbers) =>
             numbers.GroupBy(x => x).Single(x => x.Count()==1).Key;
