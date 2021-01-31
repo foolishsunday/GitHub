@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonTest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace LinqApp
 {
+
     class Program
     {      
         static void Main(string[] args)
         {
-            //1.Select
+            //1.Select：把符合条件的筛选出来
             Console.WriteLine("Select的应用:创建一个新的结果字段");
             string path = @"index.ppt";
             string[] names = ".word .xls .xlsx .ppt".Split(' ');
@@ -18,6 +20,19 @@ namespace LinqApp
             var isTarget = targets.Any(p => p == true);
             Console.WriteLine("Is target file? " + isTarget.ToString());
 
+            //1.1.Select：把符合条件的筛选出来，带index参数
+            List<Person> persons = new List<Person>()
+            {
+                new Person(){ Name="Levi", Address="广东"},
+                new Person(){ Name="Jack",Address="杭州"}
+            };
+            var newPersons = persons.Select(x =>
+            {
+                return "Name = " + x.Name + ";" + " Address = " + x.Address;
+            });
+            foreach (var item in newPersons)
+                Console.WriteLine(item);
+            Console.WriteLine("------------------");
 
             //2.SingleOrDefault
             Console.WriteLine("SingleOrDefault:选取每个元素的单个字符");
