@@ -89,17 +89,7 @@ namespace LinqApp
             Console.WriteLine(unique);
             Console.Read();
 
-            //5.Dictionary赋初值方式
-            var newDict = new Dictionary<string, List<int>>()
-            {
-                ["pos"] = new List<int>(),
-                ["peaks"] = new List<int>()
-            };
-            var nDict = new Dictionary<string, int[]>()
-            {
-                {"peaks", new int[]{123 } },
-                {"pos", new int[]{456 }}
-            };
+
         }
             
 

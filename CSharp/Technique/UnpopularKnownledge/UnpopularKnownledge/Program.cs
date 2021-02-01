@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,29 @@ namespace UnpopularKnownledge
             var repstr = new string('*', 4);
             Assert.AreEqual(repstr, "****");//true
 
+            //5.Dictionary赋初值方式
+            var newDict = new Dictionary<string, List<int>>()
+            {
+                ["pos"] = new List<int>(),
+                ["peaks"] = new List<int>()
+            };
+            var nDict = new Dictionary<string, int[]>()
+            {
+                {"peaks", new int[]{ 123 }},
+                {"pos", new int[]{ 456 }}
+            };
+
+            //6.ConcurrentDictionary 线程安全
+            var cd = new ConcurrentDictionary<string, int[]>();
+            cd.AddOrUpdate("peaks", new int[2] { 123,456},(k,v)=>
+            {
+                var cv1 = v[0];
+                var cv2 = v[1];
+                return v;   //Add的时候不进这里，只有update时才进
+            });
+            cd.AddOrUpdate("peaks", new int[2] { 123, 456 }, (k, v) => new int[1] { 111});
+            var cdv = cd["peaks"];
+         
             Console.WriteLine("Yes.");
             Console.Read();
 
