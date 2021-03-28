@@ -13,7 +13,7 @@ namespace MvcWeb.Factory
         {
             this.filterType = type;
         }
-        public bool IsReusable => true;
+        public bool IsReusable => false;
 
         //IFilterMetadata空接口，为了标识是一个Filter
         public IFilterMetadata CreateInstance(IServiceProvider provider)
