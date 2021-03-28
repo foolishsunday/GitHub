@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyPairApp", "..\..\Techniq
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Head", "0.Head", "{C717F703-3CEA-4CD9-B5B3-D083E8FB1924}"
 	ProjectSection(SolutionItems) = preProject
-		Text.txt = Text.txt
+		..\..\Text.txt = ..\..\Text.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericT", "..\..\Technique\GenericT\GenericT.csproj", "{0DADD7F2-DDFA-412F-A70E-81701595C2A3}"

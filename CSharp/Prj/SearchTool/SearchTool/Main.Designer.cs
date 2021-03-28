@@ -36,6 +36,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.tbKey = new System.Windows.Forms.TextBox();
+            this.lblSum = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbDocPath
@@ -108,11 +109,21 @@
             this.tbKey.TabIndex = 7;
             this.tbKey.Text = "interface";
             // 
+            // lblSum
+            // 
+            this.lblSum.AutoSize = true;
+            this.lblSum.Location = new System.Drawing.Point(633, 111);
+            this.lblSum.Name = "lblSum";
+            this.lblSum.Size = new System.Drawing.Size(11, 12);
+            this.lblSum.TabIndex = 8;
+            this.lblSum.Text = "0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSum);
             this.Controls.Add(this.tbKey);
             this.Controls.Add(this.rtbLog);
             this.Controls.Add(this.btnSearch);
@@ -138,6 +149,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.RichTextBox rtbLog;
         private System.Windows.Forms.TextBox tbKey;
+        private System.Windows.Forms.Label lblSum;
     }
 }
 

@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SearchTool
+namespace DevSearchTool
 {
-    public partial class MainForm : Form
+    public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
         public MainForm()
         {
             InitializeComponent();
         }
+
         private async Task<string> SearchTask(IEnumerable<string> docs, string key)
         {
             return await Task.Run(() =>
@@ -28,7 +29,7 @@ namespace SearchTool
                     if (lineNum > 0)
                     {
                         text += i.ToString() + " " + item + "行号:" + lineNum.ToString() + Environment.NewLine;
-                        i++;                     
+                        i++;
                     }
                     finishedCount++;
                     Update_FinishedSum(finishedCount);
@@ -58,13 +59,15 @@ namespace SearchTool
             var lists = Util.FilesName(path, ok, ng);
             cnt = lists.Count();
 
-            Task.Run(async() =>
+            Task.Run(async () =>
             {
                 text = await SearchTask(lists, key);
             }).ContinueWith(m =>
             {
-                rtbLog.Text = text;
-                rtbLog.AppendText("完成");
+                var strs = text.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                strs.ToList().ForEach(x => rtbLog.Items.Add(x));
+                //rtbLog.Text = text;
+                rtbLog.Items.Add("完成");
             }, ui);
         }
     }
