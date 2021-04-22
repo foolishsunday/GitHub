@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using MvcWeb.Factory;
 using MvcWeb.Service;
 using MvcWeb.Utility;
+using MvcWeb.Utility.Filter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,17 @@ namespace MvcWeb.Controllers
             this.service = service;
         }
         //[CustomExceptionFilterAttribute]
+        [CustomActionFilterAttribute]
+        //[CustomOrderedFilterAttribute(Order = 2)]
+        [CustomResourceFilterAttribute]
+        [CustomResultFilterAttribute]
         public IActionResult Index()
         {
             this.logger.LogInformation(service.GetName());
             //throw new Exception("first controller exception");
-            int i = 1;
-            i -= 1;
-            int result = 10 / i;
+            //int i = 1;
+            //i -= 1;
+            //int result = 10 / i;
             return View();
         }
     }

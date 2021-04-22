@@ -27,6 +27,7 @@ namespace MvcWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Console.WriteLine("startup ConfigureServices start");
             services.AddControllersWithViews();
 
             //IOC：1.解耦 2.屏蔽细节。DI依赖注入，是实现IOC的手段。DI：构造对象，能自动把依赖的对象生成并传入，支持递归无限级的。 IOC是目标，DI是手段。
@@ -42,7 +43,7 @@ namespace MvcWeb
             //五种方法：1.直接用特性 2.用内置的ServiceFilter(必须ConfigureServices) 3.全局注册AddControllersWithViews 4.TypeFilter(无需注册) 5.CustomFilterFactoryAttribute
             //services.AddControllersWithViews(options =>
             //{
-            //    options.Filters.Add(typeof(CustomExceptionFilterAttribute));
+            //    options.Filters.Add(typeof(CustomExceptionFilterAttribute));//MVC全局容器
             //});
 
             //AOP：如果用ServiceFilter的方法，必须添加一下实例注册
@@ -50,6 +51,9 @@ namespace MvcWeb
 
             //AOP: 如果用CustomFilterFactoryAttribute，则必须注册
             services.AddTransient<CustomExceptionFilterAttribute>();
+            //services.AddHealthChecks();
+
+            Console.WriteLine("startup ConfigureServices end");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -129,13 +133,14 @@ namespace MvcWeb
 
             app.UseAuthorization();//使用授权
 
+            //app.UseHealthChecks("/check");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=First}/{action=Index}/{id?}");
             });
-
+            
         }
     }
 }
