@@ -2,6 +2,7 @@
 using BBSWeb.Entity.Context;
 using BBSWeb.Filters;
 using BBSWeb.Repository;
+using DbFirst.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,20 +18,23 @@ namespace BBSWeb.Controllers
     public class LoginController : ControllerBase
     {
 
-        private readonly StudentService _studentService;
-        public LoginController(StudentService studentService)
+        //private readonly StudentService _studentService;
+        //private readonly IProductService _productService;
+        public LoginController()//(IProductService productService)
         {
-            //this.studentRepository = studentRepository;
-            _studentService = studentService;
+            //_studentService = studentService;
+            //_productService = productService;
         }
         [HttpGet]
-        [TypeFilter(typeof(CustomActionFilterAttribute))]
-        [Authorize]
+        //[TypeFilter(typeof(CustomActionFilterAttribute))]
+        //[Authorize]
         public string Get(string userName, string password)
         {
-            var stu = _studentService.GetInfo().Where(x=>x.Id==2).FirstOrDefault();
-            string text = string.Format($"id = {stu.Id}, name = {stu.Name}");
-            return text;
+            //var stu = _studentService.GetInfo().Where(x=>x.Id==2).FirstOrDefault();
+            //string text = string.Format($"id = {stu.Id}, name = {stu.Name}");
+            //var p = _productService.QueryAll().Single(x => x.Id == 4);
+            //string text = string.Format($"id = {p.Id}, name = {p.Name}");
+            return "abcd";
         }
 
         //同时存在两个get时，添加路由
@@ -40,7 +44,7 @@ namespace BBSWeb.Controllers
             return new Student() { Id = 3, Name = "C", Major = "HK" };
         }
         [HttpPost]
-        public string Insert()
+        public string Login(string name, string password)
         {
             return "这是post";
         }

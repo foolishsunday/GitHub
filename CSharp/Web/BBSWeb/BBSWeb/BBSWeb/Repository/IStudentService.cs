@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BBSWeb.Repository
 {
-    interface IStudentService : IServiceInfo<Student>
+    public interface IStudentService 
     {
+        IQueryable<Student> GetAll();
     }
 }

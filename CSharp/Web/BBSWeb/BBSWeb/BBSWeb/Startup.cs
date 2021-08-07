@@ -2,6 +2,7 @@ using BBSWeb.Entity;
 using BBSWeb.Entity.Context;
 using BBSWeb.Policy;
 using BBSWeb.Repository;
+using DbFirst.Service;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -41,7 +42,8 @@ namespace BBSWeb
             var conn = Configuration.GetConnectionString("MockDb");
             
             services.AddDbContext<AppDbContext>(options => options.UseMySql(conn, ServerVersion.AutoDetect(conn)));
-            services.AddTransient<StudentService>();
+            //services.AddTransient<IProductService, ProductService>();
+
             //services.AddSingleton<IAuthorizationHandler, CustomAuthorizationHandler>();//²ßÂÔÊÚÈ¨
             //services.AddScoped(typeof(IServiceInfo<>), typeof(BaseService<>));
             //services.AddControllersWithViews().AddXmlSerializerFormatters();
