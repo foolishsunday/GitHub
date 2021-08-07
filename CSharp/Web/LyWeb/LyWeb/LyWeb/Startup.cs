@@ -1,5 +1,4 @@
-using Ly.Business.Base;
-using Ly.IBusiness;
+using Ly.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -45,6 +44,7 @@ namespace LyWeb
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LyWeb v1"));
             }
+            app.UseDiyLog();
 
             app.UseRouting();
 

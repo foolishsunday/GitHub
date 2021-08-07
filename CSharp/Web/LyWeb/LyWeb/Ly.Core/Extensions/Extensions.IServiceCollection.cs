@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Ly.Core
 {
-    public static partial class Extention
+    public static partial class Extensions
     {
         private static readonly ProxyGenerator _generator = new ProxyGenerator();
         public static IServiceCollection AddAutoMapper(this IServiceCollection services, Action<IMapperConfigurationExpression> configure = null)
